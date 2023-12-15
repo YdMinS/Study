@@ -3,12 +3,12 @@
 ## any manual changes will be erased      
 ##
 ## Debug
-ProjectName            :=Project1
+ProjectName            :=Project2
 ConfigurationName      :=Debug
 WorkspaceConfiguration :=Debug
 WorkspacePath          :=/Users/ixtlim/Desktop/DeChallintier/YdMinS/Study/C++/01_Getting_Started/Workspace2
-ProjectPath            :=/Users/ixtlim/Desktop/DeChallintier/YdMinS/Study/C++/01_Getting_Started/Workspace2/Project1
-IntermediateDirectory  :=../build-$(WorkspaceConfiguration)/Project1
+ProjectPath            :=/Users/ixtlim/Desktop/DeChallintier/YdMinS/Study/C++/01_Getting_Started/Workspace2/Project2
+IntermediateDirectory  :=../build-$(WorkspaceConfiguration)/Project2
 OutDir                 :=$(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
@@ -94,7 +94,7 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/Users/ixtlim/Desktop/DeChallintier/YdMinS/Study/C++/01_Getting_Started/Workspace2/Project1/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/Users/ixtlim/Desktop/DeChallintier/YdMinS/Study/C++/01_Getting_Started/Workspace2/Project2/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM main.cpp
 
