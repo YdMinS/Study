@@ -10,7 +10,7 @@ public class Queue {
         Node next;
 
         Node(int value){
-            this.value = value
+            this.value = value;
         }
 
     }
