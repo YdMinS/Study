@@ -4,7 +4,7 @@
 Java/**/.idea/
 !**/src/main/**/out/
 !**/src/test/**/out/
-!/out
+out
 
 ### C++ ###
 # Prerequisites
