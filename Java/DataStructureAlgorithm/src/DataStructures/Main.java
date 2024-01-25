@@ -7,15 +7,13 @@ import tree.BinarySearchTree;
 
 public class Main {
     public static void main(String[] args) {
-        Heap myHeap = new Heap();
-        myHeap.insert(99);
-        myHeap.insert(72);
-        myHeap.insert(61);
-        myHeap.insert(58);
+        BinarySearchTree myBST = new BinarySearchTree();
 
-        System.out.println(myHeap.getHeap());
+        myBST.rInsert(2);
+        myBST.rInsert(1);
+        myBST.rInsert(3);
 
-        myHeap.insert(100);
-        System.out.println(myHeap.getHeap());
+        System.out.println(myBST.root.value);
+        System.out.println(myBST.root.left.value+", "+myBST.root.right.value);
     }
 }
