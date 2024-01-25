@@ -1,19 +1,21 @@
 import doublylinkedlist.DoublyLinkedList;
+import graph.Graph;
 import hashtable.HashTable;
+import heap.Heap;
 import linkedlist.LinkedList;
 import tree.BinarySearchTree;
 
 public class Main {
     public static void main(String[] args) {
-        HashTable myHT = new HashTable();
+        Heap myHeap = new Heap();
+        myHeap.insert(99);
+        myHeap.insert(72);
+        myHeap.insert(61);
+        myHeap.insert(58);
 
-        myHT.set("nails", 100);
-        myHT.set("tile", 50);
-        myHT.set("lumber", 80);
-        myHT.set("paint", 20);
-        myHT.set("bolts", 10);
-        myHT.printTable();
+        System.out.println(myHeap.getHeap());
 
-        System.out.println(myHT.keys());
+        myHeap.insert(100);
+        System.out.println(myHeap.getHeap());
     }
 }
