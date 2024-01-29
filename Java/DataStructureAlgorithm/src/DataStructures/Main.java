@@ -9,11 +9,13 @@ public class Main {
     public static void main(String[] args) {
         BinarySearchTree myBST = new BinarySearchTree();
 
-        myBST.rInsert(2);
-        myBST.rInsert(1);
-        myBST.rInsert(3);
+        myBST.insert(1);
+        myBST.insert(2);
+        myBST.insert(3);
+        myBST.insert(4);
+        myBST.insert(5);
+        myBST.insert(6);
 
-        System.out.println(myBST.root.value);
-        System.out.println(myBST.root.left.value+", "+myBST.root.right.value);
+        System.out.println(myBST.DFSPostOrder());
     }
 }
