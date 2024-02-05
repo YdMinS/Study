@@ -1,6 +1,6 @@
-# i_am_rich
+# i_am_righ
 
-The first flutter application that I make.
+The first flutter application I make.
 
 ## Getting Started
 
