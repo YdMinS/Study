@@ -93,3 +93,16 @@ out
 */iOSInjectionProject/
 
 # End of https://www.toptal.com/developers/gitignore/api/swift
+
+#Flutter projects
+Flutter/*/gradle-wrapper.jar
+Flutter/*//.gradle
+Flutter/*//captures/
+Flutter/*//gradlew
+Flutter/*//gradlew.bat
+Flutter/*//local.properties
+GFlutter/*/eneratedPluginRegistrant.java
+
+Flutter/*/key.properties
+Flutter/*/**/*.keystore
+Flutter/*/**/*.jks
