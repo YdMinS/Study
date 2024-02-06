@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:play_yut/yut_roller.dart';
+
 void main() {
   runApp(
     MaterialApp(
@@ -11,8 +13,10 @@ void main() {
           ),
         ),
         child: const Scaffold(
-          backgroundColor: Colors.transparent,
-        ),
+            backgroundColor: Colors.transparent,
+            body: Center(
+              child: YutRoller(),
+            )),
       ),
     ),
   );
