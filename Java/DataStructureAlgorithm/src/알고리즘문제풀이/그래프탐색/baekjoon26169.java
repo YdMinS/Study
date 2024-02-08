@@ -29,7 +29,6 @@ public class baekjoon26169 {
         int depth = 0;
         visited[x][y] = true;
         if(map[x][y] == -1) return false;
-        numOfApple += map[x][y]==1 ? 1 : 0;
 
         dfs(x, y, depth, visited);
 
