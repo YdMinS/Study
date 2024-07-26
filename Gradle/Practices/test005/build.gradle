@@ -1,0 +1,27 @@
+task FirstExeTask{
+    doLast{
+        println 'FirstExeTask gradle task'
+    }
+}
+
+FirstExeTask{
+    throw new Exception('Exception')
+}
+
+task SecondExeTask(dependsOn:FirstExeTask){
+    doLast{
+        println('SecondExeTask gradle task')
+    }
+}
+
+task ThirdExeTask(dependsOn:SecondExeTask){
+    doLast{
+        println('ThirdExeTasks gradle task')
+    }
+}
+
+task finishTask {
+    println 'memory clear'
+}
+
+FirstExeTask.finalizedBy finishTask

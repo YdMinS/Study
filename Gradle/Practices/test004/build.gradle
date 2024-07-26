@@ -1,0 +1,17 @@
+task FirstExeTask {
+    doLast{
+        println 'FirstExeTask gradle task'
+    }
+}
+
+task SecondExeTask (dependsOn: 'FirstExeTask') {
+    doLast{
+        println 'SecondExeTask gradle task'
+    }
+}
+
+task ThirdExeTask(dependsOn : 'SecondExeTask'){
+    doLast{
+        println 'ThirdExeTasks gradle task'
+    }
+}

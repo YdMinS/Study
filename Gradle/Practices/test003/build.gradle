@@ -1,0 +1,29 @@
+// task exeTask1 {
+//     doLast {
+//         String strOutput = 'Have a Good Day'
+//         println '1. String chagne : ' + strOutput.toUpperCase()
+//         println '2. String chagne : ' + strOutput.toLowerCase()
+//     }
+// }
+
+// task exeTask2 {
+//     doLast{
+//         10.times{ println "$it" }  
+//     }
+// }
+
+3.times{
+    counter -> task "exeTask$counter" {
+        doLast{
+            println "task counter : $counter"
+        }
+    }
+}
+
+exeTask1.depondesOn exeTask0, exeTask1
+
+task exeTask(description: "This is gradle description") {
+    doLast{
+        println description
+    }
+}
