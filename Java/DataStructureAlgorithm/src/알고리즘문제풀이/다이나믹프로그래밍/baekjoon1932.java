@@ -7,7 +7,7 @@ import java.io.*;
 public class baekjoon1932 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static StringTokenizer st;
-    static int N;
+    static int N, L;
     static int[][] map, dp;
 
     public static void main(String[] args) throws IOException{
@@ -17,7 +17,9 @@ public class baekjoon1932 {
     }
 
     static void input() throws IOException{
-        N = Integer.parseInt(br.readLine());
+        st = new StringTokenizer(br.readLine());
+        N = Integer.parseInt(st.nextToken());
+        L = Integer.parseInt(st.nextToken());
         map = new int[N][N];
         dp = new int[N][N];
         for(int i=0; i<N; i++){
