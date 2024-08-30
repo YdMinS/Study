@@ -17,5 +17,3 @@ public class baekjoon10953 {
         }
     }
 }
-/Users/ixtlim/Desktop/DeChallintier/YdMinS/Study/out/production/Study/알고리즘문제풀이/문자열/baekjoon10953
-        ./Users/ixtlim/Desktop/DeChallintier/YdMinS/Study/Java/DataStructureAlgorithm/src/알고리즘문제풀이/문자열/baekjoon10953.java
