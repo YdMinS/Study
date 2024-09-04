@@ -1,4 +1,4 @@
-package 알고리즘문제풀이.브루트포스;
+package 알고리즘문제풀이.문자열;
 
 import java.lang.*;
 import java.io.*;
