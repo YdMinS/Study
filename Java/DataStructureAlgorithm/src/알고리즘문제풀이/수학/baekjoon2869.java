@@ -5,24 +5,14 @@ import java.io.*;
 import java.util.*;
 
 public class baekjoon2869 {
-    static long a, b, v, d=1;
-
     public static void main(String[] args) throws IOException{
-        input();
-        if(a-b>0) {
-            d += (v - a) / (a - b);
-            if((v-a)%(a-b)!=0) {
-                d++;
-            }
-        }
-        System.out.println(d);
-    }
-
-    private static void input() throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        a = Long.parseLong(st.nextToken());
-        b = Long.parseLong(st.nextToken());
-        v = Long.parseLong(st.nextToken());
+        long a = Long.parseLong(st.nextToken());
+        long b = Long.parseLong(st.nextToken());
+        long v = Long.parseLong(st.nextToken());
+        long d = 1+ (v-a) / (a-b);
+        if((v-a)%(a-b)!=0) d++;
+        System.out.println(d);
     }
 }
