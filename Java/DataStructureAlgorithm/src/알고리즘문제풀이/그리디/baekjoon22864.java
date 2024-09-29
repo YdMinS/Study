@@ -7,7 +7,6 @@ import java.io.*;
 public class baekjoon22864 {
     static int A, B, C, M, burden=0, time;
 
-
     public static void main(String[] args) throws IOException{
         input();
         execute();
@@ -30,6 +29,7 @@ public class baekjoon22864 {
                 time++;
             } else {
                 burden-=C;
+                if(burden<0) burden = 0;
             }
         }
     }
