@@ -1,10 +1,10 @@
-package 알고리즘문제풀이.그래프탐색;
+package 알고리즘문제풀이.정렬;
 
 import java.util.*;
 import java.lang.*;
 import java.io.*;
 
-public class baekjoon1584 {
+public class baekjoon27522 {
     static int[] scoreArr = {0, 10, 8, 6, 5, 4, 3, 2, 1};
     static PriorityQueue<Racer> pq = new PriorityQueue<Racer>();
     static Team redTeam, blueTeam;
