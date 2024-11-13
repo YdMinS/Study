@@ -20,30 +20,27 @@ public class baekjoon3407 {
 
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
         int N = Integer.parseInt(br.readLine());
         for(int i=0; i<N; i++){
             String str = br.readLine();
-            boolean isPronounceable = false;
-            for(int j=1; j<=2; j++){
-                if(dfs(str, 0)){
-                    isPronounceable = true;
-                    break;
-                }
-            }
-            System.out.println(isPronounceable ? "YES" : "NO");
+            sb.append(canPronounce(str) ? "YES\n" : "NO\n");
         }
+        System.out.println(sb.toString());
         br.close();
     }
 
-    private static boolean dfs(String str, int s){
-        if(s == str.length()){
-            return true;
-        }
-        for(int e = s+1; e<=s+2 && e <=str.length(); e++){
-            if(atomSet.contains(str.substring(s,e)) && dfs(str, e)){
-                return true;
+    private static boolean canPronounce(String str){
+        int n = str.length();
+        boolean[] dp = new boolean[n+1];
+        dp[0] = true;
+        for(int i=1; i<=n; i++){
+            if(i>=1 && dp[i-1] && atomSet.contains(str.substring(i-1, i))){
+                dp[i] = true;
+            } else if(i>=2 && dp[i-2] && atomSet.contains(str.substring(i-2, i))){
+                dp[i] = true;
             }
         }
-        return false;
+        return dp[n];
     }
 }
