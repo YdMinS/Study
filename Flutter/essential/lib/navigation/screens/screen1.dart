@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:essential/navigation/screens/user.dart';
 
 class Screen1 extends StatelessWidget {
   @override
@@ -23,8 +24,14 @@ class Screen1 extends StatelessWidget {
                 ),
                 ElevatedButton(
                   child: Text('Go to screen 2'),
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/two');
+                  onPressed: () async {
+                    final result =
+                        await Navigator.pushNamed(context, '/two', arguments: {
+                      "arg1": 10,
+                      "arg2": "hello",
+                      "arg3": User("name", "seoul"),
+                    });
+                    print('result : ${(result as User).name}');
                   },
                 ),
               ],
