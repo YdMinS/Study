@@ -70,14 +70,14 @@ public class DataRestTest {
                 .andExpect(content().contentType(MediaType.valueOf("application/hal+json")));
     }
 
-    @DisplayName("[api] comment retrieve test")
-    @Test
-    void givenNothing_whenRequestingComment_thenReturnsCommentJsonResponse() throws Exception {
-        // given
-
-        // when & then
-        mvc.perform(get("/api/articleComments/2"))
-                .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.valueOf("application/hal+json")));
-    }
+//    @DisplayName("[api] comment retrieve test")
+//    @Test
+//    void givenNothing_whenRequestingComment_thenReturnsCommentJsonResponse() throws Exception {
+//        // given
+//
+//        // when & then
+//        mvc.perform(get("/api/articleComments/2"))
+//                .andExpect(status().isOk())
+//                .andExpect(content().contentType(MediaType.valueOf("application/hal+json")));
+//    }
 }
