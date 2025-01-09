@@ -6,9 +6,14 @@ public class baekjoon2857 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder strBuilder = new StringBuilder();
+        int cnt = 0;
         for(int i=1; i<=5; i++){
             String str = br.readLine().toUpperCase();
             if (str.contains("FBI")) {
+                if(cnt!=0){
+                    strBuilder.append(" ");
+                }
+                cnt++;
                 strBuilder.append(i);
             }
         }
