@@ -2,7 +2,7 @@ package 알고리즘문제풀이.데이터구조;
 
 import java.io.*;
 
-public class baekjoon17889 {
+public class baekjoon1789 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         long S = Long.parseLong(br.readLine());
