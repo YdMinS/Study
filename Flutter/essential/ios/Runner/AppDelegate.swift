@@ -48,7 +48,29 @@ import UIKit
     }
   })
 
+  // event channel
+
+  let eventChannel = FlutterEventChannel(
+       name: "eventChannel",
+       binaryMessenger: controller.binaryMessenger
+  )
+  eventChannel.setStreamHandler(SwiftStreamHandler())
+
   GeneratedPluginRegistrant.register(with: self)
   return super.application(application, didFinishLaunchingWithOptions: launchOptions)
 }
+}
+
+class SwiftStreamHandler: NSObject, FlutterStreamHandler{
+    public func onListen(
+        withArguments arguments: Any?,
+        eventSink events: @escaping FlutterEventSink) -> FlutterError?{
+        events("send event data.. from ios native..")
+        return nil
+    }
+
+
+    public func onCancel(withArguments arguments: Any?) -> FlutterError?{
+        return nil
+    }
 }

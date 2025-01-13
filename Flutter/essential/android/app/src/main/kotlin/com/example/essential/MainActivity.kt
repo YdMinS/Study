@@ -13,6 +13,7 @@ class MainActivity: FlutterActivity() {
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         GeneratedPluginRegistrant.registerWith(flutterEngine)
 
+        // message channel
         val messageChannel = BasicMessageChannel<String>(
             flutterEngine.dartExecutor,
             "messageChannelA",
@@ -26,6 +27,7 @@ class MainActivity: FlutterActivity() {
             }
         }
 
+        // method channel
         val methodChannel =
             MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "methodChannelA")
         methodChannel.setMethodCallHandler { call, result ->
@@ -52,5 +54,21 @@ class MainActivity: FlutterActivity() {
                 result.notImplemented()
             }
         }
+
+        // event channel
+        val eventChannel = EventChannel(flutterEngine.dartExecutor, "eventChannel")
+        eventChannel.setStreamHandler(
+            object : EventChannel.StreamHandler{
+                override fun onListen(
+                    p0: Any?,
+                    p1: EventChannel.EventSink?
+                ){
+                    io.flutter.Log.d("platform", "onListen ...")
+                    p1?.success("send event data..from native...")
+                }
+                override fun onCancel(p0: Any?){
+                }
+            }
+        )
     }
 }
