@@ -11,8 +11,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@DisplayName("View Controller - Articles")
-@WebMvcTest(controllers = ArticleControllerTest.class)
+@WebMvcTest(controllers = ArticleController.class)
 class ArticleControllerTest {
 
     private final MockMvc mvc;
@@ -21,7 +20,6 @@ class ArticleControllerTest {
         this.mvc = mvc;
     }
 
-    @Disabled("in development")
     @DisplayName("[view][GET] Article List - success")
     @Test
     public void givenNothing_whenRequestingArticlesView_thenReturningArticlesView() throws Exception{
@@ -30,7 +28,7 @@ class ArticleControllerTest {
         // when
         mvc.perform(get("/v1/articles"))
                 .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.TEXT_HTML))
+                .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML))
                 .andExpect(view().name("articles/index"))
                 .andExpect(model().attributeExists("articles"));
         // then
