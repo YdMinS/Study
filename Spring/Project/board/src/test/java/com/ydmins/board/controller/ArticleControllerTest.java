@@ -26,7 +26,7 @@ class ArticleControllerTest {
         // given
 
         // when
-        mvc.perform(get("/v1/articles"))
+        mvc.perform(get("/articles"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML))
                 .andExpect(view().name("articles/index"))
@@ -41,7 +41,7 @@ class ArticleControllerTest {
         // given
 
         // when
-        mvc.perform(get("/v1/articles/1"))
+        mvc.perform(get("/articles/1"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.TEXT_HTML))
                 .andExpect(model().attributeExists("article"))
@@ -57,7 +57,7 @@ class ArticleControllerTest {
         // given
 
         // when
-        mvc.perform(get("/v1/articles/search"))
+        mvc.perform(get("/articles/search"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.TEXT_HTML))
                 .andExpect(view().name("articles/search"));
@@ -71,7 +71,7 @@ class ArticleControllerTest {
         // given
 
         // when
-        mvc.perform(get("/v1/articles/search"))
+        mvc.perform(get("/articles/search"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.TEXT_HTML))
                 .andExpect(view().name("articles/search"));
