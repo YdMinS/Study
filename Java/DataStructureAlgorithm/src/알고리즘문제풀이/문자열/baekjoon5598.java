@@ -10,7 +10,7 @@ public class baekjoon5598 {
         for(int i=0; i<encodedStr.length(); i++){
             char ch = (char)(encodedStr.charAt(i)-3);
             if(ch<'A'){
-                ch = (char)('Z' - ('A' - ch));
+                ch += 26;
             }
             decodedStr.append(ch);
         }
