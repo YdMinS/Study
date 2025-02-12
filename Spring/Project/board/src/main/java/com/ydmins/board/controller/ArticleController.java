@@ -16,4 +16,9 @@ public class ArticleController {
         map.addAttribute("articles", List.of());
         return "articles/index";
     }
+
+    @GetMapping("/{id}")
+    public String article(){
+        return "articles/detail";
+    }
 }
