@@ -1,0 +1,14 @@
+package 알고리즘문제풀이.수학;
+
+import java.util.*;
+import java.io.*;
+
+public class baekjoon3046 {
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int R1 = Integer.parseInt(st.nextToken());
+        int S = Integer.parseInt(st.nextToken());
+        System.out.println(S*2-R1);
+    }
+}
