@@ -32,16 +32,18 @@ public class baekjoon31217 {
         br.close();
     }
 
-    private static int search(){
-        int cnt = 0;
+    private static long search(){
+        long cnt = 0;
         for(int i=1; i<=N; i++){
-            int size = graph[i].size();
+            long size = graph[i].size();
             if(size>=3){
-                int thisCnt = size*(size-1)*(size-2)/6;
-                cnt += thisCnt;
-                cnt %= MOD;
+                cnt += calculateCombination(size) % MOD;
             }
         }
         return cnt;
+    }
+
+    private static long calculateCombination(long n){
+        return n * (n-1) * (n-2) / 6;
     }
 }

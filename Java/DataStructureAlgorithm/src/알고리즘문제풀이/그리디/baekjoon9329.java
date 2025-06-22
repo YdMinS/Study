@@ -4,11 +4,6 @@ import java.util.*;
 import java.io.*;
 
 public class baekjoon9329 {
-    private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    private static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-    private static Reward[] rewards;
-    private static int[] stickerCounts;
-
     private static class Reward{
         int[] stickers;
         int value;
@@ -24,20 +19,24 @@ public class baekjoon9329 {
     }
 
     public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int N = Integer.parseInt(br.readLine());
         for(int i=0; i<N; i++){
-            input();
+            Object[] inputs = input(br);
+            Reward[] rewards = (Reward[]) inputs[0];
+            int[] stickerCounts = (int[]) inputs[1];
             Arrays.sort(rewards, (a, b)-> Double.compare(b.getEfficiency(), a.getEfficiency()));
-            execute();
+            bw.write(execute(rewards, stickerCounts)+"\n");
         }
         bw.close();
     }
 
-    private static void input() throws IOException {
+    private static Object[] input(BufferedReader br) throws IOException {
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
-        rewards = new Reward[n];
+        Reward[] rewards = new Reward[n];
         for(int j=0; j<n; j++){
             st = new StringTokenizer(br.readLine());
             int k = Integer.parseInt(st.nextToken());
@@ -49,14 +48,15 @@ public class baekjoon9329 {
             rewards[j] = new Reward(stickers, price);
         }
         st = new StringTokenizer(br.readLine());
-        stickerCounts = new int[m+1];
+        int[] stickerCounts = new int[m+1];
         for(int i=1; i<=m; i++){
             int sticker = Integer.parseInt(st.nextToken());
             stickerCounts[i] = sticker;
         }
+        return new Object[]{rewards, stickerCounts};
     }
 
-    private static void execute() throws IOException{
+    private static long execute(Reward[] rewards, int[] stickerCounts) throws IOException{
         long totalReward = 0;
         for(Reward reward : rewards){
             int maxExchange = Integer.MAX_VALUE;
@@ -70,6 +70,6 @@ public class baekjoon9329 {
                 stickerCounts[sticker] -= maxExchange;
             }
         }
-        bw.write(totalReward + "\n");
+        return totalReward;
     }
 }

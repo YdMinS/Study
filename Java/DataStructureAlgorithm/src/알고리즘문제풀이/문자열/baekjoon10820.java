@@ -7,7 +7,7 @@ public class baekjoon10820 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         String str;
-        while((str = br.readLine())!=null){
+        while((str = br.readLine()) != null){
             int C = 0;
             int c = 0;
             int n = 0;

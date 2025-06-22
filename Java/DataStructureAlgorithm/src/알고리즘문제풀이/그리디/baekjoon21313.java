@@ -1,6 +1,5 @@
 package 알고리즘문제풀이.그리디;
 
-import java.util.*;
 import java.io.*;
 import java.lang.*;
 
