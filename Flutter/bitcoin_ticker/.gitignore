@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/flutter,androidstudio,macos,windows
 # Edit at https://www.toptal.com/developers/gitignore?templates=flutter,androidstudio,macos,windows
 
+### Project ###
+**/secret.dart
+
 ### Flutter ###
 # Flutter/Dart/Pub related
 **/doc/api/

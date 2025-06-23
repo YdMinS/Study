@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:bitcoin_ticker/price_screen.dart';
 
 void main() {
   runApp(BitCoinTicker());
@@ -18,7 +19,7 @@ class BitCoinTicker extends StatelessWidget {
           onPrimary: Colors.blueAccent,
         ),
       ),
-      home: Scaffold(),
+      home: PriceScreen(),
     );
   }
 }
